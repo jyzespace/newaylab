@@ -56,7 +56,7 @@ const UseCases = () => {
   ];
 
   return (
-    <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section id="solucoes-ia-automacao" className="relative py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-20">
@@ -83,7 +83,7 @@ const UseCases = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Number */}
-              <div className="text-6xl font-bold text-gray-100 mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-6xl font-bold text-gray-400 mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>
                 {useCase.number}
               </div>
 

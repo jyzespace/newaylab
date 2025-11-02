@@ -132,7 +132,7 @@ const AIComparisonVideo = () => {
           <div className="absolute top-3 sm:top-6 left-2 sm:left-4 right-2 sm:right-4 text-center">
             <div className="flex items-center justify-center gap-1 sm:gap-2 text-emerald-400 font-medium text-xs sm:text-sm">
               <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span>IA Jyze Delivery</span>
+              <span>IA NewayLab</span>
             </div>
           </div>
 

@@ -24,7 +24,7 @@ const FaleConosco = () => {
   // Função para abrir WhatsApp
   const openWhatsApp = () => {
     const phoneNumber = "5533997001663";
-    const message = encodeURIComponent("Olá! Gostaria de falar com a equipe do Jyze Delivery sobre meus projetos.");
+    const message = encodeURIComponent("Olá! Gostaria de falar com a equipe do NewayLab sobre meus projetos.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -368,9 +368,9 @@ const FaleConosco = () => {
 
           {/* Informações e Horários */}
           <div className="space-y-8">
-            {/* Por que escolher o Jyze Delivery */}
+            {/* Por que escolher o NewayLab */}
             <div className="bg-slate-800/30 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50">
-              <h3 className="text-2xl font-bold mb-6">Por que escolher o Jyze Delivery?</h3>
+              <h3 className="text-2xl font-bold mb-6">Por que escolher o NewayLab?</h3>
               <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
                   <div key={index} className="flex items-start gap-4">

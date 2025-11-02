@@ -32,7 +32,7 @@ const FaleConosco = () => {
       badge: "Preferido",
       onClick: () => {
         const phoneNumber = "5533997001663";
-        const message = encodeURIComponent("Olá! Gostaria de falar com a equipe do Jyze Delivery sobre meus projetos.");
+        const message = encodeURIComponent("Olá! Gostaria de falar com a equipe do NewayLab sobre meus projetos.");
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
       }
     },
@@ -408,11 +408,11 @@ const FaleConosco = () => {
 
           {/* Informações e Horários */}
           <div className="space-y-8">
-            {/* Por que escolher o Jyze Delivery */}
+            {/* Por que escolher o NewayLab */}
             <div className="bg-slate-800/30 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-700/50">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                 <Star className="w-6 h-6 text-yellow-400" />
-                Por que escolher o Jyze Delivery?
+                Por que escolher o NewayLab?
               </h3>
               <div className="space-y-6">
                 {whyChooseUs.map((reason, index) => (

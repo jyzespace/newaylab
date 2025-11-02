@@ -16,16 +16,16 @@ export class GeminiProvider implements AIProvider {
 
   async sendMessage(message: string, context?: string): Promise<string> {
     const systemContext = context || `
-Você é um assistente virtual da empresa Jyze Delivery, especializada em soluções de otimização e automação para empresas.
+Você é um assistente virtual da empresa NewayLab, especializada em soluções de otimização e automação para empresas.
 
 Informações sobre a empresa:
-- Nome: Jyze Delivery
+- Nome: NewayLab
 - Especialidade: Transformação digital, automação de processos, soluções de IA
 - Benefícios: Aumento de 40% na produtividade, redução de 60% nos custos operacionais
 - Serviços: Análise de processos, implementação de sistemas automatizados, consultoria estratégica
 - Diferencial: Resultados exponenciais e soluções personalizadas
 
-Responda de forma amigável, profissional e sempre direcionando para os benefícios da Jyze Delivery.
+Responda de forma amigável, profissional e sempre direcionando para os benefícios da NewayLab.
 Mantenha as respostas concisas (máximo 100 palavras) e sempre ofereça ajuda adicional.
 `;
 
@@ -68,7 +68,7 @@ export class OpenAIProvider implements AIProvider {
 
   async sendMessage(message: string, context?: string): Promise<string> {
     const systemContext = context || `
-Você é um assistente virtual do Jyze Delivery, empresa de soluções de otimização e automação.
+Você é um assistente virtual do NewayLab, empresa de soluções de otimização e automação.
 Responda de forma profissional e amigável sobre nossos serviços.
 `;
 
@@ -111,20 +111,20 @@ export class MockAIProvider implements AIProvider {
     
     const lowerMessage = message.toLowerCase();
     
-    // Respostas contextuais sobre o Jyze Delivery
+    // Respostas contextuais sobre o NewayLab
     const responses = {
       greeting: [
-        "Olá! Bem-vindo ao Jyze Delivery! 👋 Como posso ajudá-lo hoje?",
-        "Oi! Sou o assistente virtual do Jyze Delivery. Em que posso ser útil?",
+        "Olá! Bem-vindo ao NewayLab! 👋 Como posso ajudá-lo hoje?",
+        "Oi! Sou o assistente virtual do NewayLab. Em que posso ser útil?",
         "Olá! Estou aqui para ajudar com qualquer dúvida sobre nossos serviços!"
       ],
       services: [
-        "O Jyze Delivery oferece soluções de otimização e automação para empresas. Nossos serviços incluem análise de processos, implementação de sistemas automatizados e consultoria estratégica. 🚀",
+        "O NewayLab oferece soluções de otimização e automação para empresas. Nossos serviços incluem análise de processos, implementação de sistemas automatizados e consultoria estratégica. 🚀",
         "Especializamo-nos em transformação digital, automação de processos e soluções de IA para maximizar a eficiência do seu negócio. 💡",
         "Oferecemos consultoria em tecnologia, desenvolvimento de sistemas personalizados e implementação de soluções de inteligência artificial. ⚡"
       ],
       benefits: [
-        "Com o Jyze Delivery, você pode esperar: aumento de 40% na produtividade, redução de 60% nos custos operacionais e automação completa de processos manuais. 📈",
+        "Com o NewayLab, você pode esperar: aumento de 40% na produtividade, redução de 60% nos custos operacionais e automação completa de processos manuais. 📈",
         "Nossos clientes obtêm resultados exponenciais: maior eficiência, redução significativa de custos e processos mais automatizados. 🎯",
         "Os benefícios incluem: otimização completa de workflows, economia de tempo e recursos, e maior competitividade no mercado. 💪"
       ],

@@ -51,7 +51,7 @@ const HowItWorks = () => {
         <div className="text-center mb-16">
           <span className="text-sm font-semibold text-blue-600 uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Nossa Metodologia</span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Como Trabalhamos
+            Como Funciona
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
             Processo estruturado da consultoria até os resultados mensuráveis

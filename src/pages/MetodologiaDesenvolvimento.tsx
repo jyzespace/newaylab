@@ -19,7 +19,7 @@ const MetodologiaDesenvolvimento = () => {
 
   const openWhatsApp = () => {
     const phoneNumber = "5533997001663";
-    const message = encodeURIComponent("Olá! Quero conhecer a metodologia de desenvolvimento do Jyze Delivery.");
+    const message = encodeURIComponent("Olá! Quero conhecer a metodologia de desenvolvimento do NewayLab.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };

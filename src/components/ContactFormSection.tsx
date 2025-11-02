@@ -83,7 +83,7 @@ const ContactFormSection = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-emerald-500/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -96,7 +96,7 @@ const ContactFormSection = () => {
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
             Fale com nossa{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 to-[#5539ff] bg-clip-text text-transparent">
               Equipe
             </span>
           </h2>
@@ -112,7 +112,7 @@ const ContactFormSection = () => {
           {submitted ? (
             // Success Message
             <div className="text-center py-12">
-              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+              <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-[#5539ff] rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -207,7 +207,7 @@ const ContactFormSection = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-[#5539ff] text-white font-bold text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 {isSubmitting ? (

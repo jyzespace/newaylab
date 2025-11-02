@@ -86,11 +86,11 @@ const Stats = () => {
               {/* Card */}
               <div className="relative bg-[#1c2128] border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all duration-300 overflow-hidden">
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-[#5539ff]/0 group-hover:from-cyan-500/10 group-hover:to-[#5539ff]/10 transition-all duration-500"></div>
 
                 <div className="relative z-10">
                   {/* Value */}
-                  <div className="text-5xl md:text-6xl font-bold text-white mb-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <div className="text-5xl md:text-6xl font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-[#5539ff] bg-clip-text text-transparent" style={{ fontFamily: 'Inter, sans-serif' }}>
                     {stat.value}
                   </div>
 
@@ -106,7 +106,7 @@ const Stats = () => {
                 </div>
 
                 {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-[#5539ff] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             </div>
           ))}
@@ -121,9 +121,10 @@ const Stats = () => {
           </p>
           <button
             onClick={() => {
-              const phoneNumber = "5533997001663";
-              const message = encodeURIComponent("Olá! Quero agendar uma consultoria gratuita sobre Automação e IA para meu negócio.");
-              window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+              const element = document.querySelector('#schedule-meeting');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             }}
             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0d1117] bg-white rounded-lg hover:bg-gray-100 transition-colors duration-200"
             style={{ fontFamily: 'Inter, sans-serif' }}

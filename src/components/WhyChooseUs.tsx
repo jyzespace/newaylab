@@ -30,42 +30,42 @@ const WhyChooseUs = () => {
       title: 'Redução de Custos',
       description: 'Diminua até 70% dos custos operacionais automatizando processos repetitivos com IA',
       highlight: '-70%',
-      gradient: 'from-yellow-500 to-orange-500'
+      gradient: 'from-cyan-400 to-[#5539ff]'
     },
     {
       icon: Target,
       title: 'Aumento de Produtividade',
       description: 'Equipes focam em tarefas estratégicas enquanto a IA cuida das operações',
       highlight: '+3x',
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-cyan-400 to-[#5539ff]'
     },
     {
       icon: Trophy,
       title: 'Previsibilidade',
       description: 'Análise de dados em tempo real para decisões baseadas em inteligência',
       highlight: 'Real-time',
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-cyan-400 to-[#5539ff]'
     },
     {
       icon: Shield,
       title: 'Disponibilidade 24/7',
       description: 'Sistemas de IA funcionam continuamente sem pausas ou limitações',
       highlight: '24/7',
-      gradient: 'from-green-500 to-emerald-500'
+      gradient: 'from-cyan-400 to-[#5539ff]'
     },
     {
       icon: Users,
       title: 'Implementação Completa',
       description: 'Da análise à implantação, cuidamos de todo o processo de automação',
       highlight: 'Full',
-      gradient: 'from-red-500 to-orange-500'
+      gradient: 'from-cyan-400 to-[#5539ff]'
     },
     {
       icon: Star,
       title: 'Tecnologia de Ponta',
       description: 'Utilizamos as IAs mais avançadas: GPT-4, Claude, Gemini e ferramentas modernas',
       highlight: 'AI+',
-      gradient: 'from-indigo-500 to-purple-500'
+      gradient: 'from-cyan-400 to-[#5539ff]'
     }
   ];
 
@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -90,7 +90,7 @@ const WhyChooseUs = () => {
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
             Por que implementar{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 to-[#5539ff] bg-clip-text text-transparent">
               IA e Automação
             </span>
           </h2>
@@ -120,8 +120,8 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Icon */}
-              <div className={`w-16 h-16 bg-gradient-to-r ${reason.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <reason.icon className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-slate-700/50 border border-slate-600/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <reason.icon className="w-8 h-8 text-gray-300" />
               </div>
 
               {/* Content */}
@@ -133,7 +133,7 @@ const WhyChooseUs = () => {
               </p>
 
               {/* Hover effect line */}
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${reason.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl`}></div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-[#5539ff] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl"></div>
             </div>
           ))}
         </div>
@@ -147,12 +147,12 @@ const WhyChooseUs = () => {
           </p>
           <button
             onClick={() => {
-              const phoneNumber = "5533997001663";
-              const message = encodeURIComponent("Olá! Quero agendar uma consultoria gratuita sobre Automação e IA para meu negócio.");
-              const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-              window.open(whatsappUrl, '_blank');
+              const element = document.querySelector('#schedule-meeting');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold text-lg rounded-xl hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-[#5539ff] text-white font-semibold text-lg rounded-xl hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             Agendar Consultoria Gratuita

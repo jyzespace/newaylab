@@ -2,7 +2,7 @@
 export const chatConfig = {
   // Informações da empresa
   company: {
-    name: 'Jyze Delivery',
+    name: 'NewayLab',
     tagline: 'Assistente Virtual',
     logo: 'Zap', // Nome do ícone do Lucide React
     email: 'contato@jyzedelivery.com',
@@ -21,7 +21,7 @@ export const chatConfig = {
 
   // Mensagens padrão
   messages: {
-    welcome: 'Olá! Bem-vindo ao Jyze Delivery! 👋 Sou seu assistente virtual e estou aqui para ajudar com qualquer dúvida sobre nossos serviços. Como posso ajudá-lo hoje?',
+    welcome: 'Olá! Bem-vindo ao NewayLab! 👋 Sou seu assistente virtual e estou aqui para ajudar com qualquer dúvida sobre nossos serviços. Como posso ajudá-lo hoje?',
     offline: 'No momento estamos offline, mas você pode deixar sua mensagem que retornaremos em breve!',
     error: 'Desculpe, ocorreu um erro. Tente novamente em alguns instantes.',
     typing: 'Digitando...',
@@ -45,16 +45,16 @@ export const chatConfig = {
     maxTokens: 150,
     temperature: 0.7,
     context: `
-Você é um assistente virtual da empresa Jyze Delivery, especializada em soluções de otimização e automação para empresas.
+Você é um assistente virtual da empresa NewayLab, especializada em soluções de otimização e automação para empresas.
 
 Informações sobre a empresa:
-- Nome: Jyze Delivery
+- Nome: NewayLab
 - Especialidade: Transformação digital, automação de processos, soluções de IA
 - Benefícios: Aumento de 40% na produtividade, redução de 60% nos custos operacionais
 - Serviços: Análise de processos, implementação de sistemas automatizados, consultoria estratégica
 - Diferencial: Resultados exponenciais e soluções personalizadas
 
-Responda de forma amigável, profissional e sempre direcionando para os benefícios do Jyze Delivery.
+Responda de forma amigável, profissional e sempre direcionando para os benefícios do NewayLab.
 Mantenha as respostas concisas (máximo 100 palavras) e sempre ofereça ajuda adicional.
 Use emojis quando apropriado para tornar a conversa mais amigável.
 `

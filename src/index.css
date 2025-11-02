@@ -265,6 +265,19 @@
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
 /* Glassmorphism */
 .backdrop-blur-sm {
   backdrop-filter: blur(8px);
@@ -300,6 +313,77 @@ button:hover {
 
 button:active {
   transform: translateY(0);
+}
+
+/* Efeito de luz deslizando como cobra pelas bordas do botão */
+@keyframes snake-top {
+  0% { background-position: -200% 0; }
+  25% { background-position: 200% 0; }
+  25.01%, 100% { background-position: 200% 0; }
+}
+
+@keyframes snake-right {
+  0%, 25% { background-position: 0 -200%; }
+  50% { background-position: 0 200%; }
+  50.01%, 100% { background-position: 0 200%; }
+}
+
+@keyframes snake-bottom {
+  0%, 50% { background-position: 200% 0; }
+  75% { background-position: -200% 0; }
+  75.01%, 100% { background-position: -200% 0; }
+}
+
+@keyframes snake-left {
+  0%, 75% { background-position: 0 200%; }
+  100% { background-position: 0 -200%; }
+}
+
+.btn-slide-border {
+  position: relative;
+  overflow: visible;
+}
+
+/* Top border */
+.btn-slide-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, transparent 45%, rgba(34, 197, 94, 0.9) 48%, rgba(34, 197, 94, 1) 50%, rgba(34, 197, 94, 0.9) 52%, transparent 55%, transparent 100%);
+  background-size: 200% 100%;
+  border-radius: 4px 4px 0 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: snake-top 3s linear infinite;
+}
+
+/* Right, Bottom, Left borders */
+.btn-slide-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    /* Right border */
+    linear-gradient(180deg, transparent 0%, transparent 45%, rgba(34, 197, 94, 0.9) 48%, rgba(34, 197, 94, 1) 50%, rgba(34, 197, 94, 0.9) 52%, transparent 55%, transparent 100%) top right / 2px 200%,
+    /* Bottom border */
+    linear-gradient(270deg, transparent 0%, transparent 45%, rgba(34, 197, 94, 0.9) 48%, rgba(34, 197, 94, 1) 50%, rgba(34, 197, 94, 0.9) 52%, transparent 55%, transparent 100%) bottom right / 200% 2px,
+    /* Left border */
+    linear-gradient(0deg, transparent 0%, transparent 45%, rgba(34, 197, 94, 0.9) 48%, rgba(34, 197, 94, 1) 50%, rgba(34, 197, 94, 0.9) 52%, transparent 55%, transparent 100%) bottom left / 2px 200%;
+  background-repeat: no-repeat;
+  animation: snake-right 3s linear infinite, snake-bottom 3s linear infinite, snake-left 3s linear infinite;
+}
+
+.btn-slide-border > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive Typography */

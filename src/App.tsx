@@ -5,12 +5,16 @@ import HowItWorks from './components/HowItWorks';
 import UseCase from './components/UseCase';
 import FeaturesGrid from './components/FeaturesGrid';
 import Stats from './components/Stats';
-import Testimonials from './components/Testimonials';
+// import Testimonials from './components/Testimonials';
 import Security from './components/Security';
 import FinalCTA from './components/FinalCTA';
-import ChatWidget from './components/ChatWidget';
+// import ChatWidget from './components/ChatWidget';
 import WhyChooseUs from './components/WhyChooseUs';
 import ScheduleMeeting from './components/ScheduleMeeting';
+import Demonstracao from './components/Demonstracao';
+import Sobre from './components/Sobre';
+import ComoNosAjudamos from './components/ComoNosAjudamos';
+import Footer from './components/Footer';
 // import SmartBackgroundMusic from './components/BackgroundMusic';
 // import CookieConsent from './components/CookieConsent';
 
@@ -31,11 +35,15 @@ function App() {
       <WhyChooseUs />
       <Stats />
       <HowItWorks />
+      <ComoNosAjudamos />
+      <Sobre />
+      <Demonstracao />
       <ScheduleMeeting />
-      <Testimonials />
+      {/*<Testimonials />*/}
       <Security />
       <FinalCTA />
-      <ChatWidget />
+      <Footer />
+      {/*<ChatWidget />*/}
       {/* <SmartBackgroundMusic /> */}
       {/* <CookieConsent /> */}
     </div>

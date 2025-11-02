@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Zap, Clock, Bot, TrendingDown, Rocket, Headphones } from 'lucide-react';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -13,10 +13,12 @@ const Hero = () => {
     window.open(whatsappUrl, '_blank');
   };
 
-  // Função para abrir Calendly
-  const openCalendly = () => {
-    // Substitua com seu link do Calendly quando disponível
-    window.open('https://calendly.com/newaylab', '_blank');
+  // Função para ir para seção de agendamento
+  const goToSchedule = () => {
+    const element = document.querySelector('#schedule-meeting');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   useEffect(() => {
@@ -58,10 +60,10 @@ const Hero = () => {
         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}>
         {/* Hero Content */}
-        <div className="mb-24">
+        <div>
           {/* Main Heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight max-w-5xl" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
-            Automatize seu negócio com Inteligência Artificial
+            Escale suas vendas com Automações & Inteligência Artificial
           </h1>
 
           {/* Description */}
@@ -71,9 +73,9 @@ const Hero = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <button
-              onClick={openCalendly}
+              onClick={goToSchedule}
               className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0d1117] bg-white rounded-lg hover:bg-gray-100 transition-colors duration-200"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
@@ -91,39 +93,48 @@ const Hero = () => {
               </svg>
             </button>
           </div>
-        </div>
 
-        {/* Demo Video/Interface Mockup - Exatamente como Laravel Cloud */}
-        <div className="relative w-full">
-          {/* Browser mockup */}
-          <div className="relative rounded-xl overflow-hidden shadow-2xl bg-[#1c2128] border border-gray-800/50">
-            {/* Browser bar */}
-            <div className="bg-[#161b22] px-4 py-3 flex items-center gap-2 border-b border-gray-800/50">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#febc2e]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
-              </div>
-              <div className="flex-1 flex justify-center">
-                <div className="px-4 py-1 bg-[#0d1117] rounded text-gray-500 text-sm font-mono">
-                  newaylab.com.br
+          {/* Benefits Marquee */}
+          <div className="relative overflow-hidden border-t border-b border-gray-800/30 py-6">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {/* Primeiro conjunto */}
+              {[
+                { icon: TrendingDown, text: 'Redução de Custos', color: 'text-gray-300' },
+                { icon: Clock, text: 'Disponível 24/7', color: 'text-gray-300' },
+                { icon: Bot, text: 'Automação Completa', color: 'text-gray-300' },
+                { icon: Zap, text: 'IA Avançada', color: 'text-gray-300' },
+                { icon: Rocket, text: 'Implementação Rápida', color: 'text-gray-300' },
+                { icon: Headphones, text: 'Suporte Especializado', color: 'text-gray-300' },
+              ].map((benefit, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="inline-flex items-center gap-3 mx-8 flex-shrink-0"
+                >
+                  <benefit.icon className={`w-5 h-5 ${benefit.color}`} />
+                  <span className="text-gray-400 text-sm font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    {benefit.text}
+                  </span>
                 </div>
-              </div>
-            </div>
-
-            {/* Content area - placeholder for video */}
-            <div className="relative aspect-video bg-gradient-to-br from-[#1c2128] to-[#0d1117]">
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                    <svg className="w-10 h-10 text-white/30" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                  <p className="text-white/50 text-sm font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>Ver demonstração</p>
+              ))}
+              {/* Segundo conjunto (duplicado para looping suave) */}
+              {[
+                { icon: TrendingDown, text: 'Redução de Custos', color: 'text-gray-300' },
+                { icon: Clock, text: 'Disponível 24/7', color: 'text-gray-300' },
+                { icon: Bot, text: 'Automação Completa', color: 'text-gray-300' },
+                { icon: Zap, text: 'IA Avançada', color: 'text-gray-300' },
+                { icon: Rocket, text: 'Implementação Rápida', color: 'text-gray-300' },
+                { icon: Headphones, text: 'Suporte Especializado', color: 'text-gray-300' },
+              ].map((benefit, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="inline-flex items-center gap-3 mx-8 flex-shrink-0"
+                >
+                  <benefit.icon className={`w-5 h-5 ${benefit.color}`} />
+                  <span className="text-gray-400 text-sm font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    {benefit.text}
+                  </span>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
