@@ -21,6 +21,11 @@ const FaleConosco = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const whatsappMessage = encodeURIComponent("Olá! Gostaria de falar com a equipe do NewayLab sobre meus projetos.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
   const contactMethods = [
     {
       icon: MessageCircle,
@@ -30,11 +35,7 @@ const FaleConosco = () => {
       action: "Chamar no WhatsApp",
       color: "from-green-500 to-emerald-500",
       badge: "Preferido",
-      onClick: () => {
-        const phoneNumber = "554588294919";
-        const message = encodeURIComponent("Olá! Gostaria de falar com a equipe do NewayLab sobre meus projetos.");
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-      }
+      href: whatsappUrl
     },
     {
       icon: Phone,
@@ -218,14 +219,26 @@ const FaleConosco = () => {
       {/* Contact Methods */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-16">
-          {contactMethods.map((method, index) => (
-            <div
+          {contactMethods.map((method, index) => {
+            const Component = method.href ? 'a' : 'div';
+            const componentProps = method.href 
+              ? { 
+                  href: method.href, 
+                  target: '_blank', 
+                  rel: 'noopener noreferrer' 
+                }
+              : { 
+                  onClick: method.onClick 
+                };
+            
+            return (
+            <Component
               key={index}
-              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-700/50 text-center transition-all duration-500 hover:scale-105 cursor-pointer hover-lift ${
+              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-700/50 text-center transition-all duration-500 hover:scale-105 hover-lift ${
                 isVisible ? 'animate-slide-up' : ''
-              }`}
+              } ${method.href ? '' : 'cursor-pointer'}`}
               style={{ animationDelay: `${index * 200}ms` }}
-              onClick={method.onClick}
+              {...componentProps}
             >
               {method.badge && (
                 <div className="absolute top-4 right-4">
@@ -243,11 +256,12 @@ const FaleConosco = () => {
               <p className="text-slate-400 text-sm mb-2">{method.description}</p>
               <p className="text-white font-semibold mb-6">{method.detail}</p>
               
-              <button className={`w-full px-6 py-3 bg-gradient-to-r ${method.color} text-white font-bold rounded-xl transition-all duration-300 hover:shadow-2xl group-hover:shadow-lg`}>
+              <span className={`inline-block w-full px-6 py-3 bg-gradient-to-r ${method.color} text-white font-bold rounded-xl transition-all duration-300 hover:shadow-2xl group-hover:shadow-lg`}>
                 {method.action}
-              </button>
-            </div>
-          ))}
+              </span>
+            </Component>
+            );
+          })}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">

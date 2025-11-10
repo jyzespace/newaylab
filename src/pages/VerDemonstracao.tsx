@@ -84,13 +84,10 @@ const VerDemonstracao = () => {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  // Função para abrir WhatsApp
-  const openWhatsApp = () => {
-    const phoneNumber = "554588294919";
-    const message = encodeURIComponent("Olá! Vi as demonstrações no site e gostaria de saber mais sobre os serviços do NewayLab.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const message = encodeURIComponent("Olá! Vi as demonstrações no site e gostaria de saber mais sobre os serviços do NewayLab.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   const demonstrations = [
     {
@@ -566,13 +563,15 @@ const VerDemonstracao = () => {
             Vamos criar algo incrível para o seu negócio também!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={openWhatsApp}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 flex items-center justify-center gap-3"
             >
               <MessageCircle className="w-6 h-6" />
               <span>Solicitar Proposta</span>
-            </button>
+            </a>
             <Link
               to="/metodologia"
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center justify-center gap-3"

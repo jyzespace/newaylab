@@ -13,12 +13,10 @@ const SolucoesEProdutos = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const openWhatsApp = () => {
-    const phoneNumber = "554588294919";
-    const message = encodeURIComponent("Olá! Quero conhecer as soluções do NewayLab para meu negócio.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const message = encodeURIComponent("Olá! Quero conhecer as soluções do NewayLab para meu negócio.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   // Portfólio de Soluções Premium
   const solutions = [
@@ -297,13 +295,15 @@ const SolucoesEProdutos = () => {
               </div>
 
               <div className="flex gap-4">
-                <button 
-                  onClick={openWhatsApp}
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Solicitar Orçamento
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -426,13 +426,15 @@ const SolucoesEProdutos = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={openWhatsApp}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3"
             >
               <MessageCircle className="w-5 h-5" />
               <span>Falar com Especialista</span>
-            </button>
+            </a>
             <button 
               onClick={() => navigate('/documentacao-tecnica')}
               className="px-8 py-4 border-2 border-slate-400 text-slate-200 font-bold rounded-xl transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:shadow-lg flex items-center justify-center gap-3"

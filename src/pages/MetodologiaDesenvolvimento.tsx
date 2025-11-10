@@ -17,12 +17,10 @@ const MetodologiaDesenvolvimento = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const openWhatsApp = () => {
-    const phoneNumber = "554588294919";
-    const message = encodeURIComponent("Olá! Quero conhecer a metodologia de desenvolvimento do NewayLab.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const message = encodeURIComponent("Olá! Quero conhecer a metodologia de desenvolvimento do NewayLab.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   // Metodologias e Frameworks que utilizamos
   const methodologies = [
@@ -481,13 +479,15 @@ const MetodologiaDesenvolvimento = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={openWhatsApp}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3"
             >
               <MessageCircle className="w-5 h-5" />
               <span>Falar com Time Técnico</span>
-            </button>
+            </a>
             <button 
               onClick={() => navigate('/solucoes-produtos')}
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3"

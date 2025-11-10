@@ -10,12 +10,10 @@ const Pricing = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const openWhatsApp = () => {
-    const phoneNumber = "554588294919";
-    const message = encodeURIComponent("Olá! Gostaria de agendar uma reunião para discutir o plano Enterprise.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const message = encodeURIComponent("Olá! Gostaria de agendar uma reunião para discutir o plano Enterprise.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   const plans = [
     {
@@ -96,11 +94,10 @@ const Pricing = () => {
   ];
 
   const handlePlanSelect = (plan: typeof plans[0]) => {
-    if (plan.isEnterprise) {
-      openWhatsApp();
-    } else {
+    if (!plan.isEnterprise) {
       navigate('/demonstracao');
     }
+    // Se for Enterprise, o link direto será usado ao invés desta função
   };
 
   return (
@@ -208,19 +205,29 @@ const Pricing = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button
-                  onClick={() => handlePlanSelect(plan)}
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-6 ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg'
-                      : plan.isEnterprise
-                      ? 'bg-gray-900 text-white hover:bg-gray-800'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                  }`}
-                  style={{ fontFamily: 'Inter, sans-serif' }}
-                >
-                  {plan.cta}
-                </button>
+                {plan.isEnterprise ? (
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-6 bg-gray-900 text-white hover:bg-gray-800 block text-center"
+                    style={{ fontFamily: 'Inter, sans-serif' }}
+                  >
+                    {plan.cta}
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => handlePlanSelect(plan)}
+                    className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-6 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg'
+                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    }`}
+                    style={{ fontFamily: 'Inter, sans-serif' }}
+                  >
+                    {plan.cta}
+                  </button>
+                )}
 
                 {/* Features List */}
                 <ul className="space-y-3">

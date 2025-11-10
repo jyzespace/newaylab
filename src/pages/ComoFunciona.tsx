@@ -18,13 +18,10 @@ const ComoFunciona = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  // Função para abrir WhatsApp
-  const openWhatsApp = () => {
-    const phoneNumber = "554588294919";
-    const message = encodeURIComponent("Olá! Gostaria de entender melhor como funciona o processo do NewayLab.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const message = encodeURIComponent("Olá! Gostaria de entender melhor como funciona o processo do NewayLab.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   const steps = [
     {
@@ -467,13 +464,15 @@ const ComoFunciona = () => {
             Entre em contato conosco e vamos transformar sua ideia em realidade!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg sm:max-w-none mx-auto">
-            <button 
-              onClick={openWhatsApp}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 flex items-center justify-center gap-2 sm:gap-3"
             >
               <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>Começar Agora</span>
-            </button>
+            </a>
             <button 
               onClick={() => navigate('/documentacao-tecnica')}
               className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center justify-center gap-2 sm:gap-3"

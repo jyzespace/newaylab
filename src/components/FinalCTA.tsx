@@ -4,13 +4,10 @@ import AnimatedButton from './AnimatedButton';
 const FinalCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Função para abrir WhatsApp
-  const openWhatsApp = () => {
-    const phoneNumber = "554588294919";
-    const message = encodeURIComponent("Olá! Quero agendar uma consultoria gratuita sobre Automação e IA para meu negócio.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const message = encodeURIComponent("Olá! Quero agendar uma consultoria gratuita sobre Automação e IA para meu negócio.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   // Função para ir para seção de agendamento
   const goToSchedule = () => {
@@ -53,13 +50,33 @@ const FinalCTA = () => {
               Agendar Consultoria
             </AnimatedButton>
 
-            <AnimatedButton
-              onClick={openWhatsApp}
-              variant="secondary"
-              className="!text-lg !border-2 !border-white/20 hover:!border-white/30"
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 overflow-hidden group text-white bg-transparent border-2 border-white/20 hover:border-white/30 hover:bg-white/5 shadow-lg"
+              style={{ fontFamily: 'Inter, sans-serif' }}
             >
-              Falar no WhatsApp
-            </AnimatedButton>
+              {/* Efeito de borda animada - cobra deslizando */}
+              <span className="absolute inset-0 rounded-lg overflow-hidden">
+                {/* Borda animada superior */}
+                <span className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-border-top"></span>
+
+                {/* Borda animada direita */}
+                <span className="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-transparent via-blue-500 to-transparent animate-border-right"></span>
+
+                {/* Borda animada inferior */}
+                <span className="absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-transparent via-blue-500 to-transparent animate-border-bottom"></span>
+
+                {/* Borda animada esquerda */}
+                <span className="absolute bottom-0 left-0 w-[2px] h-full bg-gradient-to-t from-transparent via-blue-500 to-transparent animate-border-left"></span>
+              </span>
+
+              {/* Conteúdo do botão */}
+              <span className="relative z-10 flex items-center gap-2">
+                Falar no WhatsApp
+              </span>
+            </a>
           </div>
 
           {/* Benefits */}

@@ -21,13 +21,10 @@ const FaleConosco = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  // Função para abrir WhatsApp
-  const openWhatsApp = () => {
-    const phoneNumber = "554588294919";
-    const message = encodeURIComponent("Olá! Gostaria de falar com a equipe do NewayLab sobre meus projetos.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  // URL do WhatsApp
+  const phoneNumber = "554588294919";
+  const message = encodeURIComponent("Olá! Gostaria de falar com a equipe do NewayLab sobre meus projetos.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   // Animação de partículas
   useEffect(() => {
@@ -93,7 +90,7 @@ const FaleConosco = () => {
       description: "Resposta em até 5 minutos",
       action: "Iniciar Conversa",
       color: "from-green-500 to-green-600",
-      onClick: openWhatsApp
+      href: whatsappUrl
     },
     {
       icon: Phone,
@@ -218,25 +215,38 @@ const FaleConosco = () => {
       {/* Contact Methods */}
       <div className="relative z-10 container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {contactMethods.map((method, index) => (
-            <div
+          {contactMethods.map((method, index) => {
+            const Component = method.href ? 'a' : 'div';
+            const componentProps = method.href 
+              ? { 
+                  href: method.href, 
+                  target: '_blank', 
+                  rel: 'noopener noreferrer' 
+                }
+              : { 
+                  onClick: method.onClick 
+                };
+            
+            return (
+            <Component
               key={index}
-              className={`bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 text-center transition-all duration-500 hover:scale-105 cursor-pointer ${
+              className={`bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 text-center transition-all duration-500 hover:scale-105 ${
                 isVisible ? 'animate-slide-up' : ''
-              }`}
+              } ${method.href ? '' : 'cursor-pointer'}`}
               style={{ animationDelay: `${index * 0.2}s` }}
-              onClick={method.onClick}
+              {...componentProps}
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                 <method.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3">{method.title}</h3>
               <p className="text-slate-300 mb-6">{method.description}</p>
-              <button className={`w-full px-6 py-3 bg-gradient-to-r ${method.color} text-white font-bold rounded-xl transition-all duration-300 hover:shadow-2xl`}>
+              <span className={`inline-block w-full px-6 py-3 bg-gradient-to-r ${method.color} text-white font-bold rounded-xl transition-all duration-300 hover:shadow-2xl`}>
                 {method.action}
-              </button>
-            </div>
-          ))}
+              </span>
+            </Component>
+            );
+          })}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
